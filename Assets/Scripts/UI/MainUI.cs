@@ -10,6 +10,7 @@ public class MainUI : MonoBehaviour {
     public Scores scores;
     // Use this for initialization
     void Start () {
+
         scorePlayer1Text.text = scores.scorePlayer1.ToString();
 	}
 
