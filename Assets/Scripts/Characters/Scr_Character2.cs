@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Scr_Character1 : MonoBehaviour {
-
+public class Scr_Character2 : MonoBehaviour
+{
     public Renderer rend;
     public int pose;
     public float poseReset = 0.75f;
@@ -17,13 +17,15 @@ public class Scr_Character1 : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "wall" && pose == other.GetComponent<Scr_Wall>().pose){
-            scoreManager.ScoreUpPlayer1();
+        if (other.tag == "wall" && pose == other.GetComponent<Scr_Wall>().pose)
+        {
+            scoreManager.ScoreUpPlayer2();
             scoreManager.bonus += 10;
             Debug.Log("PRO");
-            Debug.Log(scoreManager.scorePlayer1);
+            Debug.Log(scoreManager.scorePlayer2);
         }
-        else{
+        else
+        {
             scoreManager.BonusReset();
             Debug.Log("noob");
         }
@@ -37,23 +39,26 @@ public class Scr_Character1 : MonoBehaviour {
 
 
     // Start
-    void Start () {
+    void Start()
+    {
         rend = GetComponent<MeshRenderer>();
         pose = 0;
         scoreManager = gameManager.GetComponent<Scores>();
         scr_gameManager = gameManager.GetComponent<GameManager>();
 
-       // scr_gameManager.character1 = this.gameObject.GetComponent<Scr_Character1>();
-    
-	}//fin du Start
-	
-	// Update is called once per frame
-	void Update () {
+       // scr_gameManager.character2 = this.gameObject.GetComponent<Scr_Character2>();
+
+    }//fin du Start
+
+    // Update is called once per frame
+    void Update()
+    {
 
         //if(isTriggered)
 
         //Pèse sur A
-		if (canPose && Input.GetButtonDown("A")){
+        if (canPose && Input.GetButtonDown("A2"))
+        {
             canPose = false;
             //Cue l'animation 1
             rend.material.SetColor("_Color", Color.green);
@@ -62,7 +67,7 @@ public class Scr_Character1 : MonoBehaviour {
         }
 
         //Pèse sur B
-        if (canPose && Input.GetButtonDown("B"))
+        if (canPose && Input.GetButtonDown("B2"))
         {
             canPose = false;
             rend.material.SetColor("_Color", Color.red);
@@ -71,7 +76,7 @@ public class Scr_Character1 : MonoBehaviour {
         }
 
         //Pèse sur X
-        if (canPose && Input.GetButtonDown("X"))
+        if (canPose && Input.GetButtonDown("X2"))
         {
             canPose = false;
             rend.material.SetColor("_Color", Color.blue);
@@ -80,7 +85,7 @@ public class Scr_Character1 : MonoBehaviour {
         }
 
         //Pèse sur Y
-        if (canPose && Input.GetButtonDown("Y"))
+        if (canPose && Input.GetButtonDown("Y2"))
         {
             canPose = false;
             rend.material.SetColor("_Color", Color.yellow);
@@ -92,7 +97,8 @@ public class Scr_Character1 : MonoBehaviour {
 
     //Mes Fonctions
 
-    void ResetPose(){
+    void ResetPose()
+    {
         rend.material.SetColor("_Color", Color.white);
         pose = 0;
         canPose = true;

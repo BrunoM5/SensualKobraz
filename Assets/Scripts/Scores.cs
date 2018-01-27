@@ -16,22 +16,22 @@ public class Scores : MonoBehaviour {
         bonus = 0;
     }
 
-    void ScoreUpPlayer1()
+    public void ScoreUpPlayer1()
     {
         scorePlayer1 += 10 + bonus;
     }
 
-    void ScoreUpPlayer2()
+    public void ScoreUpPlayer2()
     {
         scorePlayer2 += 10 + bonus;
     }
 
-    void BonusIncrement()
+    public void BonusIncrement()
     {
         bonus += 10;
     }
 
-    void BonusReset()
+    public void BonusReset()
     {
         bonus = 0;
     }
