@@ -282,11 +282,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Characters\Scr_Character1.cs" />
     <Compile Include="Assets\Scripts\Scores.cs" />
-    <Compile Include="Assets\Scripts\Scr_WallSpawner.cs" />
     <Compile Include="Assets\Scripts\UI\Character.cs" />
     <Compile Include="Assets\Scripts\UI\CharacterSelection.cs" />
     <Compile Include="Assets\Scripts\UI\MainUI.cs" />
+    <Compile Include="Assets\Scripts\Walls\Scr_Wall.cs" />
+    <Compile Include="Assets\Scripts\Walls\Scr_WallSpawner.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
