@@ -12,32 +12,32 @@ public class Scores : MonoBehaviour {
     void Start ()
     {
         scorePlayer1 = 0;
-        scorePlayer2 = 5;
+        scorePlayer2 = 0;
         bonus = 0;
     }
 
-    void ScoreUpPlayer1()
+    public void ScoreUpPlayer1()
     {
         scorePlayer1 += 10 + bonus;
     }
 
-    void ScoreUpPlayer2()
+    public void ScoreUpPlayer2()
     {
         scorePlayer2 += 10 + bonus;
     }
 
-    void BonusIncrement()
+    public void BonusIncrement()
     {
         bonus += 10;
     }
 
-    void BonusReset()
+    public void BonusReset()
     {
         bonus = 0;
     }
 
-    // Update is called once per frame
-    void Update () {
-		
-	}
+    void TauntBonus()
+    {
+        bonus *= 2;
+    }
 }

@@ -12,11 +12,13 @@ public class MainUI : MonoBehaviour {
     void Start () {
 
         scorePlayer1Text.text = scores.scorePlayer1.ToString();
-	}
+        scorePlayer2Text.text = scores.scorePlayer2.ToString();
+    }
 
    
     // Update is called once per frame
-    void Update () {
+    void UpdateScore () {
         scorePlayer1Text.text = scores.scorePlayer1.ToString();
+        scorePlayer2Text.text = scores.scorePlayer2.ToString();
     }
 }
