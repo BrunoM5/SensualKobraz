@@ -5,12 +5,13 @@ using UnityEngine;
 public class Scr_WallSpawner : MonoBehaviour {
     public bool canSpawn;
     public float cooldown;
-    public Scr_Wall monWall;
+    public GameObject monWall;
+    public GameObject monCharacter;
 
 	// Use this for initialization
 	void Start () {
         canSpawn = true;
-        cooldown = 3.0f;
+        //cooldown = 1.5f;
 	}
 	
 	// Update is called once per frame
@@ -23,7 +24,7 @@ public class Scr_WallSpawner : MonoBehaviour {
     //Fonctions
     void SpawnWall(){
         canSpawn = false;
-        Instantiate(monWall, this.transform.position, this.transform.rotation);
+        Instantiate(monWall, transform.position, this.transform.rotation);
         Invoke("ResetSpawner", cooldown);
     }
     void ResetSpawner(){
